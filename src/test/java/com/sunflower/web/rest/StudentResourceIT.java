@@ -194,26 +194,6 @@ public class StudentResourceIT {
             .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME)));
     }
     
-    @SuppressWarnings({"unchecked"})
-    public void getAllStudentsWithEagerRelationshipsIsEnabled() throws Exception {
-        when(studentServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restStudentMockMvc.perform(get("/api/students?eagerload=true"))
-            .andExpect(status().isOk());
-
-        verify(studentServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
-    @SuppressWarnings({"unchecked"})
-    public void getAllStudentsWithEagerRelationshipsIsNotEnabled() throws Exception {
-        when(studentServiceMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restStudentMockMvc.perform(get("/api/students?eagerload=true"))
-            .andExpect(status().isOk());
-
-        verify(studentServiceMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
     @Test
     @Transactional
     public void getStudent() throws Exception {

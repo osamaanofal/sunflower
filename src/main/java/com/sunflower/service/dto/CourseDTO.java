@@ -7,9 +7,8 @@ import java.math.BigDecimal;
 /**
  * A DTO for the {@link com.sunflower.domain.CourseDBEntity} entity.
  */
-public class CourseDTO implements Serializable {
+public class CourseDTO extends BaseEntityDTO implements Serializable {
     
-    private Long id;
 
     @NotNull
     @Size(min = 2, max = 200)
@@ -23,13 +22,7 @@ public class CourseDTO implements Serializable {
     private BigDecimal price;
 
     
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+  
 
     public String getTitle() {
         return title;

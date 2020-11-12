@@ -8,9 +8,14 @@ import java.util.Set;
 /**
  * A DTO for the {@link com.sunflower.domain.StudentDBEntity} entity.
  */
-public class StudentDTO implements Serializable {
+public class StudentDTO extends BaseEntityDTO implements Serializable {
     
-    private Long id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8703551622657741000L;
+
+	private Long id;
 
     @NotNull
     @Size(min = 2, max = 200)

@@ -6,67 +6,58 @@ import java.io.Serializable;
 /**
  * A DTO for the {@link com.sunflower.domain.TeacherDBEntity} entity.
  */
-public class TeacherDTO implements Serializable {
-    
-    private Long id;
+public class TeacherDTO extends BaseEntityDTO implements Serializable {
 
-    @NotNull
-    @Size(min = 2, max = 200)
-    private String firstName;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -134172128369623217L;
 
-    @NotNull
-    @Size(min = 2, max = 200)
-    private String lastName;
+	@NotNull
+	@Size(min = 2, max = 200)
+	private String firstName;
 
-    
-    public Long getId() {
-        return id;
-    }
+	@NotNull
+	@Size(min = 2, max = 200)
+	private String lastName;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (!(o instanceof TeacherDTO)) {
+			return false;
+		}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof TeacherDTO)) {
-            return false;
-        }
+		return id != null && id.equals(((TeacherDTO) o).id);
+	}
 
-        return id != null && id.equals(((TeacherDTO) o).id);
-    }
+	@Override
+	public int hashCode() {
+		return 31;
+	}
 
-    @Override
-    public int hashCode() {
-        return 31;
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "TeacherDTO{" +
-            "id=" + getId() +
-            ", firstName='" + getFirstName() + "'" +
-            ", lastName='" + getLastName() + "'" +
-            "}";
-    }
+	// prettier-ignore
+	@Override
+	public String toString() {
+		return "TeacherDTO{" + "id=" + getId() + ", firstName='" + getFirstName() + "'" + ", lastName='" + getLastName()
+				+ "'" + "}";
+	}
 }

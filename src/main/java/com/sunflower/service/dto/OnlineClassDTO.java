@@ -7,9 +7,12 @@ import com.sunflower.domain.enumeration.Status;
 /**
  * A DTO for the {@link com.sunflower.domain.OnlineClassDBEntity} entity.
  */
-public class OnlineClassDTO implements Serializable {
+public class OnlineClassDTO extends BaseEntityDTO implements Serializable {
     
-    private Long id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1208138583424098668L;
 
     @NotNull
     @Size(min = 2, max = 200)
@@ -22,14 +25,6 @@ public class OnlineClassDTO implements Serializable {
     private Long courseId;
 
     private Long teacherId;
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
