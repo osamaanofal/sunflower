@@ -1,0 +1,66 @@
+application {
+  config {
+    baseName sunflower,
+    applicationType microservice,
+    packageName com.sunflower,
+    authenticationType jwt,
+    cacheProvider no,
+    enableHibernateCache false,
+    languages [en,ar-ly]
+    skipClient true,
+    enableSwaggerCodegen true,
+    prodDatabaseType mysql,
+    entitySuffix DBEntity
+  }
+  entities *
+}
+
+entity Course {
+title String unique required maxlength(200) minlength(2),
+description String required maxlength(500) minlength(2),
+price BigDecimal required
+}
+
+entity Teacher {
+firstName String required maxlength(200) minlength(2),
+lastName String required maxlength(200) minlength(2)
+}
+
+entity OnlineClass {
+title String required maxlength(200) minlength(2),
+status Status required
+}
+
+entity Student {
+firstName String required maxlength(200) minlength(2),
+lastName String required maxlength(200) minlength(2)
+}
+
+entity Receipt {
+receiptNo String required,
+receiptDate LocalDate required,
+amount BigDecimal required,
+description String maxlength(500)
+}
+
+
+enum Status {
+    OPEN, CLOSED
+}
+relationship OneToMany {
+  Course to OnlineClass,
+  Teacher to OnlineClass,
+  Student to Receipt
+  Course to Receipt
+}
+
+relationship ManyToMany {
+	Student to OnlineClass
+}
+
+dto all with mapstruct
+
+service all with serviceImpl
+
+paginate all with pagination
+

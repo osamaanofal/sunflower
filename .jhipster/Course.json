@@ -1,0 +1,49 @@
+{
+  "name": "Course",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique", "required", "maxlength", "minlength"],
+      "fieldValidateRulesMaxlength": "200",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "minlength"],
+      "fieldValidateRulesMaxlength": "500",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "onlineClass",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "onlineClass"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "receipt",
+      "otherEntityRelationshipName": "course",
+      "relationshipName": "receipt"
+    }
+  ],
+  "changelogDate": "20201112121725",
+  "entityTableName": "course",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["sunflower"]
+}
