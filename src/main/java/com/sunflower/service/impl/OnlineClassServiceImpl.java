@@ -1,7 +1,9 @@
 package com.sunflower.service.impl;
 
 import com.sunflower.service.OnlineClassService;
+import com.sunflower.domain.CourseDBEntity;
 import com.sunflower.domain.OnlineClassDBEntity;
+import com.sunflower.domain.enumeration.Status;
 import com.sunflower.repository.OnlineClassRepository;
 import com.sunflower.service.dto.OnlineClassDTO;
 import com.sunflower.service.mapper.OnlineClassMapper;
@@ -13,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -63,4 +66,35 @@ public class OnlineClassServiceImpl implements OnlineClassService {
         log.debug("Request to delete OnlineClass : {}", id);
         onlineClassRepository.deleteById(id);
     }
+
+	@Override
+	public Boolean closeOnlineClass(Long classId) throws Exception {
+
+		OnlineClassDBEntity onlineClass = onlineClassRepository.findById(classId)
+				.orElseThrow(()->  new Exception("Class Not Found"));
+
+		onlineClass.setStatus(Status.CLOSED);
+		
+		onlineClassRepository.save(onlineClass);
+				
+		return true;
+	}
+
+	@Override
+	public Boolean availOnlineClass(Long classId) throws Exception {
+		OnlineClassDBEntity onlineClass = onlineClassRepository.findById(classId)
+				.orElseThrow(()->  new Exception("Class Not Found"));
+
+		onlineClass.setStatus(Status.CLOSED);
+		
+		onlineClassRepository.save(onlineClass);
+		
+		return true;
+	}
+
+	@Override
+    @Transactional(readOnly = true)
+	public List<OnlineClassDBEntity> getOpenClassesMappedToCourses() {
+		return onlineClassRepository.getOpenClassesMappedToCourses();
+	}
 }

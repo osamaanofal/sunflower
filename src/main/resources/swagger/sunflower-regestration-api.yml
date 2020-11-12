@@ -1,0 +1,185 @@
+# API-first development with OpenAPI
+# This file will be used at compile time to generate Spring-MVC endpoint stubs using openapi-generator
+openapi: '3.0.1'
+info:
+  title: 'sunflower'
+  version: 0.0.1
+servers:
+  - url: http://localhost:8081/api
+    description: Development server
+  - url: https://localhost:8081/api
+    description: Development server with TLS Profile
+paths:
+  '/courses/getOpenCourses':
+    get:
+      summary: get available courses
+      description: get available courses
+      tags:
+        - courses-api
+      operationId: getOpenCourses
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AvailableCourseArray'
+
+  '/online-classes/{classId}/open':
+    post:
+      summary: Avail Class for specific course for student registration
+      description: Avail Class for specific course for student registration
+      tags:
+        - online-classe-api
+      operationId: availOnlineClass
+      parameters:
+        - name: classId
+          in: path
+          schema:
+            type: integer
+            format: int64
+          required: true
+      responses:
+        '404':
+          description: class not found
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: boolean
+  '/online-classes/{classId}/close':
+    post:
+      summary: close  Class
+      description: close  Class
+      tags:
+        - online-classe-api
+      operationId: closeOnlineClass
+      parameters:
+        - name: classId
+          in: path
+          schema:
+            type: integer
+            format: int64
+          required: true
+      responses:
+        '404':
+          description: class not found
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: boolean
+
+  '/student/{studentId}/online-class/{classId}':
+    post:
+      summary: Register student to class of a mapped course
+      description: Register student to class of a mapped course
+      operationId: registerStudentToClass
+      tags:
+        - student
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+
+        - name: classId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: SUCCESS
+          content:
+            application/json:
+              schema:
+                type: boolean
+        '400':
+          description: student can't have more than 3 courses
+
+  '/student/{studentId}/online-classes':
+    get:
+      summary: Get all registered classes
+      description: Get all registered classes
+      operationId: getStudentClasses
+      tags:
+        - student
+      parameters:
+        - name: studentId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: student courses
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentClassArray'
+
+components:
+  schemas:
+    AvailableCourse:
+      type: object
+      properties:
+        courseTitle:
+          type: string
+        classTitle:
+          type: string
+        teacherName:
+          type: string
+        courseId:
+          type: integer
+          format: int64
+        classId:
+          type: integer
+          format: int64
+        teacherId:
+          type: integer
+          format: int64
+        price:
+          type: number
+          format: double
+
+    StudentClass:
+      type: object
+      properties:
+        classTitle:
+          type: string
+        courseTitle:
+          type: string
+        teacherName:
+          type: string
+
+    AvailableCourseArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/AvailableCourse'
+    StudentClassArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/StudentClass'
+
+  responses:
+    Problem:
+      description: error occurred - see status code and problem object for more information.
+      content:
+        'application/problem+json':
+          schema:
+            $ref: 'https://opensource.zalando.com/problem/schema.yaml#/Problem'
+#  securitySchemes:
+#    jwt:
+#      type: http
+#      description: JWT Authentication
+#      scheme: bearer
+#      bearerFormat: JWT
+#security:
+#  - jwt: []

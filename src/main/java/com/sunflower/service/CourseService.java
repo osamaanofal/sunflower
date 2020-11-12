@@ -1,10 +1,13 @@
 package com.sunflower.service;
 
+import com.sunflower.domain.CourseDBEntity;
 import com.sunflower.service.dto.CourseDTO;
+import com.sunflower.web.rest.model.AvailableCourse;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +46,11 @@ public interface CourseService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+    
+    /**
+     * get open courses mapped to class
+     *
+     * 
+     */
+    List<CourseDBEntity> getOpenCoursesMappedToClasses();
 }

@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -63,4 +64,14 @@ public class CourseServiceImpl implements CourseService {
         log.debug("Request to delete Course : {}", id);
         courseRepository.deleteById(id);
     }
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<CourseDBEntity> getOpenCoursesMappedToClasses() {
+        log.debug("Request to getOpenClassesMappedToCourses");
+        
+        List<CourseDBEntity> courseDBEntities = courseRepository.getOpenCoursesMappedToClasses();
+                
+		return courseDBEntities;
+	}
 }

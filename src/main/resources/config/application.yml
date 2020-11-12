@@ -16,11 +16,11 @@
 
 eureka:
   client:
-    enabled: true
+    enabled: false
     healthcheck:
-      enabled: true
-    fetch-registry: true
-    register-with-eureka: true
+      enabled: false
+    fetch-registry: false
+    register-with-eureka: false
     instance-info-replication-interval-seconds: 10
     registry-fetch-interval-seconds: 10
   instance:
@@ -69,7 +69,7 @@ management:
         include: ['configprops', 'env', 'health', 'info', 'jhimetrics', 'logfile', 'loggers', 'prometheus', 'threaddump']
   endpoint:
     health:
-      show-details: when_authorized
+      show-details: always
       roles: 'ROLE_ADMIN'
     jhimetrics:
       enabled: true
