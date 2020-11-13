@@ -30,7 +30,7 @@ public class OnlineClassDTO extends BaseEntityDTO implements Serializable {
 
     private String teacherName;
     
-    private String coureTitle;
+    private String courseTitle;
     
     @Override
     public boolean equals(Object o) {
