@@ -2,7 +2,7 @@
 # Spring Boot configuration.
 #
 # This configuration will be overridden by the Spring profile you use,
-# for example application-dev.yml if you use the "dev" profile.
+# for example application-dev.yml if you use the 'dev' profile.
 #
 # More information on profiles: https://www.jhipster.tech/profiles/
 # More information on configuration properties: https://www.jhipster.tech/common-application-properties/
@@ -176,10 +176,10 @@ jhipster:
     name: 'sunflowerApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
-  #     allowed-origins: "*"
-  #     allowed-methods: "*"
-  #     allowed-headers: "*"
-  #     exposed-headers: "Authorization,Link,X-Total-Count"
+  #     allowed-origins: '*'
+  #     allowed-methods: '*'
+  #     allowed-headers: '*'
+  #     exposed-headers: 'Authorization,Link,X-Total-Count'
   #     allow-credentials: true
   #     max-age: 1800
   mail:
@@ -195,6 +195,12 @@ jhipster:
     contact-email:
     license: unlicensed
     license-url:
+  cors:
+    allowedOrigins:
+      - '*'
+    allowed-methods: ['POST', 'GET', 'OPTIONS', 'DELETE']
+    allowed-headers: ['Origin', ' X-Requested-With', ' Content-Type', ' Accept', ' x-auth-token']
+    
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
