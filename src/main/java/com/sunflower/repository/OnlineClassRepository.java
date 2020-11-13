@@ -7,13 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.sunflower.domain.OnlineClassDBEntity;
+import com.sunflower.repository.projections.lookup.TitleLookupSelectable;
 
 /**
  * Spring Data  repository for the OnlineClassDBEntity entity.
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OnlineClassRepository extends BaseEntityRepository<OnlineClassDBEntity, Long> {
+public interface OnlineClassRepository extends TitleLookupSelectable,BaseEntityRepository<OnlineClassDBEntity, Long> {
 	
 	@Query(value = " Select onlineCourse from OnlineClassDBEntity onlineCourse"
 			+ " inner join onlineCourse.course where onlineCourse.status = 'OPEN'  ")

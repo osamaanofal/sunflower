@@ -1,10 +1,12 @@
 package com.sunflower.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import com.sunflower.repository.projections.lookup.EntityLookup;
 import com.sunflower.service.dto.BaseEntityDTO;
 
 public interface EntityService<D extends BaseEntityDTO, E> {
@@ -39,5 +41,7 @@ public interface EntityService<D extends BaseEntityDTO, E> {
 	 * @param id the id of the entity.
 	 */
 	void delete(Long id);
+	
+	List<EntityLookup> getEntityLookups();
 
 }

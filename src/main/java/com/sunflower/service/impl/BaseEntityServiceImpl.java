@@ -1,5 +1,6 @@
 package com.sunflower.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sunflower.repository.BaseEntityRepository;
+import com.sunflower.repository.projections.lookup.EntityLookup;
 import com.sunflower.service.EntityService;
 import com.sunflower.service.dto.BaseEntityDTO;
 import com.sunflower.service.mapper.EntityMapper;
@@ -55,4 +57,10 @@ public abstract class BaseEntityServiceImpl<D extends BaseEntityDTO, E> implemen
 		baseEntityRepository.deleteById(id);
 	}
 
+	@Override
+	public List<EntityLookup> getEntityLookups() {
+		log.debug("Request to Entity lookups");
+
+		return baseEntityRepository.getEntityLookup();
+	}
 }

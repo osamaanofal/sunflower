@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.sunflower.repository.projections.lookup.EntityLookup;
 import com.sunflower.service.EntityService;
 import com.sunflower.service.dto.BaseEntityDTO;
 import com.sunflower.web.rest.errors.BadRequestAlertException;
@@ -143,4 +144,16 @@ public abstract class BaseEntityResource<D extends BaseEntityDTO, E> {
 				.build();
 	}
 
+	
+	/**
+	 * {@code GET  /lookups} 
+	 *
+	 *
+	 * 
+	 */
+	@GetMapping("/lookups")
+	public ResponseEntity<List<EntityLookup>> entityLookups() {
+		log.debug("REST request to Entity lookups ");
+		return ResponseEntity.ok().body(entityService.getEntityLookups());
+	}
 }
