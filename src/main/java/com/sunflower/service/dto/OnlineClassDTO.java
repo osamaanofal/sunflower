@@ -4,9 +4,12 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import com.sunflower.domain.enumeration.Status;
 
+import lombok.Data;
+
 /**
  * A DTO for the {@link com.sunflower.domain.OnlineClassDBEntity} entity.
  */
+@Data
 public class OnlineClassDTO extends BaseEntityDTO implements Serializable {
     
     /**
@@ -21,43 +24,14 @@ public class OnlineClassDTO extends BaseEntityDTO implements Serializable {
     @NotNull
     private Status status;
 
-
     private Long courseId;
 
     private Long teacherId;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public Long getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
-    }
-
-    public Long getTeacherId() {
-        return teacherId;
-    }
-
-    public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
-    }
-
+    private String teacherName;
+    
+    private String coureTitle;
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) {

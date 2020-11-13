@@ -21,48 +21,16 @@ import java.util.Optional;
  */
 @Service
 @Transactional
-public class CourseServiceImpl implements CourseService {
-
-    private final Logger log = LoggerFactory.getLogger(CourseServiceImpl.class);
+public class CourseServiceImpl extends BaseEntityServiceImpl<CourseDTO, CourseDBEntity> implements CourseService {
 
     private final CourseRepository courseRepository;
 
     private final CourseMapper courseMapper;
 
     public CourseServiceImpl(CourseRepository courseRepository, CourseMapper courseMapper) {
+    	super(courseRepository, courseMapper, LoggerFactory.getLogger(CourseServiceImpl.class));
         this.courseRepository = courseRepository;
         this.courseMapper = courseMapper;
-    }
-
-    @Override
-    public CourseDTO save(CourseDTO courseDTO) {
-        log.debug("Request to save Course : {}", courseDTO);
-        CourseDBEntity courseDBEntity = courseMapper.toEntity(courseDTO);
-        courseDBEntity = courseRepository.save(courseDBEntity);
-        return courseMapper.toDto(courseDBEntity);
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Page<CourseDTO> findAll(Pageable pageable) {
-        log.debug("Request to get all Courses");
-        return courseRepository.findAll(pageable)
-            .map(courseMapper::toDto);
-    }
-
-
-    @Override
-    @Transactional(readOnly = true)
-    public Optional<CourseDTO> findOne(Long id) {
-        log.debug("Request to get Course : {}", id);
-        return courseRepository.findById(id)
-            .map(courseMapper::toDto);
-    }
-
-    @Override
-    public void delete(Long id) {
-        log.debug("Request to delete Course : {}", id);
-        courseRepository.deleteById(id);
     }
 
 	@Override

@@ -15,7 +15,7 @@ import java.util.Optional;
  * Spring Data  repository for the StudentDBEntity entity.
  */
 @Repository
-public interface StudentRepository extends JpaRepository<StudentDBEntity, Long> {
+public interface StudentRepository extends BaseEntityRepository<StudentDBEntity, Long> {
 
     @Query(value = "select distinct student from StudentDBEntity student left join fetch student.onlineClasses",
         countQuery = "select count(distinct student) from StudentDBEntity student")

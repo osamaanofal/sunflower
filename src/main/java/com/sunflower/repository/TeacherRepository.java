@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TeacherRepository extends JpaRepository<TeacherDBEntity, Long> {
+public interface TeacherRepository extends BaseEntityRepository<TeacherDBEntity, Long> {
 }

@@ -15,7 +15,10 @@ import org.mapstruct.*;
 public interface OnlineClassMapper extends EntityMapper<OnlineClassDTO, OnlineClassDBEntity> {
 
     @Mapping(source = "course.id", target = "courseId")
+    @Mapping(source = "course.title", target = "courseTitle")
+    
     @Mapping(source = "teacher.id", target = "teacherId")
+    @Mapping(source = "teacher.firstName", target = "teacherName")
     OnlineClassDTO toDto(OnlineClassDBEntity onlineClassDBEntity);
 
     @Mapping(source = "courseId", target = "course")

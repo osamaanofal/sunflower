@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.sunflower.service.EntityService;
@@ -37,7 +35,7 @@ public abstract class BaseEntityResource<D extends BaseEntityDTO, E> {
 
 	protected final Logger log;
 
-	protected static final String ENTITY_NAME = "sunflowerCourse";
+	protected static final String ENTITY_NAME = "sunflowerEntity";
 
 	@Value("${jhipster.clientApp.name}")
 	protected String applicationName;
@@ -65,8 +63,8 @@ public abstract class BaseEntityResource<D extends BaseEntityDTO, E> {
 	 * @throws URISyntaxException if the Location URI syntax is incorrect.
 	 */
 	@PostMapping()
-	public ResponseEntity<D> createCourse(@Valid @RequestBody D entityDTO) throws URISyntaxException {
-		log.debug("REST request to save Course : {}", entityDTO);
+	public ResponseEntity<D> createEntity(@Valid @RequestBody D entityDTO) throws URISyntaxException {
+		log.debug("REST request to save Entity : {}", entityDTO);
 		if (entityDTO.getId() != null) {
 			throw new BadRequestAlertException("A new entity cannot already have an ID", ENTITY_NAME, "idexists");
 		}
@@ -89,8 +87,8 @@ public abstract class BaseEntityResource<D extends BaseEntityDTO, E> {
 	 * @throws URISyntaxException if the Location URI syntax is incorrect.
 	 */
 	@PutMapping()
-	public ResponseEntity<D> updateCourse(@Valid @RequestBody D entityDTO) throws URISyntaxException {
-		log.debug("REST request to update Course : {}", entityDTO);
+	public ResponseEntity<D> updateEntity(@Valid @RequestBody D entityDTO) throws URISyntaxException {
+		log.debug("REST request to update Entity : {}", entityDTO);
 		if (entityDTO.getId() == null) {
 			throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
 		}
@@ -108,8 +106,8 @@ public abstract class BaseEntityResource<D extends BaseEntityDTO, E> {
 	 *         of entitys in body.
 	 */
 	@GetMapping()
-	public ResponseEntity<List<D>> getAllCourses(Pageable pageable) {
-		log.debug("REST request to get a page of Courses");
+	public ResponseEntity<List<D>> getAllEntitys(Pageable pageable) {
+		log.debug("REST request to get a page of Entitys");
 		Page<D> page = entityService.findAll(pageable);
 		HttpHeaders headers = PaginationUtil
 				.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
@@ -124,8 +122,8 @@ public abstract class BaseEntityResource<D extends BaseEntityDTO, E> {
 	 *         the entityDTO, or with status {@code 404 (Not Found)}.
 	 */
 	@GetMapping("/{id}")
-	public ResponseEntity<D> getCourse(@PathVariable Long id) {
-		log.debug("REST request to get Course : {}", id);
+	public ResponseEntity<D> getEntity(@PathVariable Long id) {
+		log.debug("REST request to get Entity : {}", id);
 		Optional<D> entityDTO = entityService.findOne(id);
 		return ResponseUtil.wrapOrNotFound(entityDTO);
 	}
@@ -137,8 +135,8 @@ public abstract class BaseEntityResource<D extends BaseEntityDTO, E> {
 	 * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
 	 */
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
-		log.debug("REST request to delete Course : {}", id);
+	public ResponseEntity<Void> deleteEntity(@PathVariable Long id) {
+		log.debug("REST request to delete Entity : {}", id);
 		entityService.delete(id);
 		return ResponseEntity.noContent()
 				.headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))

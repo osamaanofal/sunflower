@@ -13,7 +13,7 @@ import com.sunflower.domain.OnlineClassDBEntity;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OnlineClassRepository extends JpaRepository<OnlineClassDBEntity, Long> {
+public interface OnlineClassRepository extends BaseEntityRepository<OnlineClassDBEntity, Long> {
 	
 	@Query(value = " Select onlineCourse from OnlineClassDBEntity onlineCourse"
 			+ " inner join onlineCourse.course where onlineCourse.status = 'OPEN'  ")
