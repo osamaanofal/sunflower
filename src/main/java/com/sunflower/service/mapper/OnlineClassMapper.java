@@ -19,6 +19,12 @@ public interface OnlineClassMapper extends EntityMapper<OnlineClassDTO, OnlineCl
     
     @Mapping(source = "teacher.id", target = "teacherId")
     @Mapping(source = "teacher.firstName", target = "teacherName")
+
+    @Mapping(source = "id", target = "classId")
+
+    
+    @Mapping(source = "status", target = "classStatus")
+    @Mapping(source = "title", target = "classTitle")
     OnlineClassDTO toDto(OnlineClassDBEntity onlineClassDBEntity);
 
     @Mapping(source = "courseId", target = "course")

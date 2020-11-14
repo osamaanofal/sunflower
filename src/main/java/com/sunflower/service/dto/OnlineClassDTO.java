@@ -28,9 +28,15 @@ public class OnlineClassDTO extends BaseEntityDTO implements Serializable {
 
     private Long teacherId;
 
+    private Long classId;
+    
     private String teacherName;
     
     private String courseTitle;
+
+    private String classTitle;
+    
+    private Status classStatus;
     
     @Override
     public boolean equals(Object o) {
