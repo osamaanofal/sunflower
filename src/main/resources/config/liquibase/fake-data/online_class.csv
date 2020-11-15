@@ -1,11 +1,51 @@
-id;title;status
-1;navigate niches;OPEN
-2;virtual;OPEN
-3;Self-enabling Customizable scalable;CLOSED
-4;Buckinghamshire Metal Intelligent;CLOSED
-5;Credit Card Account benchmark;CLOSED
-6;deposit;OPEN
-7;teal;OPEN
-8;Up-sized;CLOSED
-9;synthesizing data-warehouse;CLOSED
-10;Arizona;OPEN
+id;title;status;course_id;teacher_id
+1;Wolkite University;OPEN;30;10
+2;University of Liverpool;CLOSED;43;13
+3;University of Electro-Communications;CLOSED;22;10
+4;Università Pontifcia Salesiana;CLOSED;30;35
+5;Universidad Privada Boliviana;CLOSED;4;23
+6;Great Lakes University of Kisumu;OPEN;44;4
+7;Bashkir State University;OPEN;50;3
+8;International University for Graduate Studies;CLOSED;26;17
+9;Dominican College of San Rafael;CLOSED;46;7
+10;California School of Professional Psychology - San Diego;CLOSED;40;4
+11;Fakir Mohan University;CLOSED;50;38
+12;"University of Dublin; Trinity College";CLOSED;5;34
+13;Johnson C. Smith University;CLOSED;6;42
+14;University of the South Pacific;CLOSED;33;35
+15;Universidad del Pacifico;CLOSED;11;7
+16;Pontificia Universidad Católica Madre y Maestra (PUCMM);CLOSED;9;49
+17;Indiana University-Purdue University at Columbus;CLOSED;8;36
+18;North Kazakhstan State University;CLOSED;29;7
+19;Baze University Abuja;CLOSED;44;14
+20;Universidade Portucalense Infante D. Henrique;OPEN;25;39
+21;Ecole Nationale d'Ingénieurs de Metz;CLOSED;9;27
+22;Atlanta College of Art;OPEN;28;14
+23;University of Wisconsin - Green Bay;CLOSED;15;30
+24;New England Institute of Technology;OPEN;3;29
+25;National Institute of the Arts;CLOSED;22;21
+26;University of Pavia;CLOSED;21;28
+27;Sophia University;CLOSED;8;44
+28;Ecole Nationale Supérieure des Industries Textiles de Mulhouse;CLOSED;32;38
+29;Ballsbridge University ;CLOSED;14;3
+30;University of Wisconsin - River Falls;CLOSED;40;29
+31;Universidad de Antofagasta;CLOSED;12;11
+32;Tietgen Business College;CLOSED;41;20
+33;Global University;CLOSED;44;36
+34;Arab European University;CLOSED;41;2
+35;National University of Food Technologies;CLOSED;43;10
+36;Fuzhou University;CLOSED;38;6
+37;American InterContinental University - Georgia;CLOSED;2;33
+38;Université du Maine;OPEN;26;18
+39;Universidad Adventista de Chile;CLOSED;2;29
+40;Indiana University - Northwest;OPEN;24;27
+41;University of Kent at Canterbury;OPEN;16;33
+42;Seton Hall University;CLOSED;49;10
+43;Sweet Briar College;CLOSED;9;40
+44;"Royal Danish Academy of Fine Arts; School of Architecture";CLOSED;1;35
+45;Fachhochschule Nordostniedersachsen;CLOSED;16;31
+46;Universidad Jóse Vasconcelos;CLOSED;32;31
+47;Shaheed Benazir Bhutto Women University ;CLOSED;9;44
+48;Knoxville College;CLOSED;36;3
+49;New College of Florida;CLOSED;26;48
+50;Universidad Gran Mariscal de Ayacucho;CLOSED;12;44
