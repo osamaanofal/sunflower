@@ -2,10 +2,10 @@ package com.sunflower.web.rest;
 
 import com.sunflower.SunflowerApp;
 import com.sunflower.domain.ReceiptDBEntity;
+import com.sunflower.mapper.ReceiptMapper;
 import com.sunflower.repository.ReceiptRepository;
 import com.sunflower.service.ReceiptService;
 import com.sunflower.service.dto.ReceiptDTO;
-import com.sunflower.service.mapper.ReceiptMapper;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

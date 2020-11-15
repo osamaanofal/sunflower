@@ -11,9 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sunflower.domain.OnlineClassDBEntity;
 import com.sunflower.domain.StudentDBEntity;
+import com.sunflower.mapper.OnlineClassMapper;
 import com.sunflower.repository.OnlineClassRepository;
 import com.sunflower.repository.StudentRepository;
-import com.sunflower.service.mapper.OnlineClassMapper;
 import com.sunflower.web.rest.StudentApiDelegate;
 import com.sunflower.web.rest.model.StudentClass;
 

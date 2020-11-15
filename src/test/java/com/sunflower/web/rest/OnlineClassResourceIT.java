@@ -5,7 +5,6 @@ import com.sunflower.domain.OnlineClassDBEntity;
 import com.sunflower.repository.OnlineClassRepository;
 import com.sunflower.service.OnlineClassService;
 import com.sunflower.service.dto.OnlineClassDTO;
-import com.sunflower.service.mapper.OnlineClassMapper;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,6 +24,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.sunflower.domain.enumeration.Status;
+import com.sunflower.mapper.OnlineClassMapper;
 /**
  * Integration tests for the {@link OnlineClassResource} REST controller.
  */

@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sunflower.domain.StudentDBEntity;
+import com.sunflower.mapper.StudentMapper;
 import com.sunflower.repository.StudentRepository;
 import com.sunflower.service.StudentService;
 import com.sunflower.service.dto.StudentDTO;
-import com.sunflower.service.mapper.StudentMapper;
 
 /**
  * Service Implementation for managing {@link StudentDBEntity}.

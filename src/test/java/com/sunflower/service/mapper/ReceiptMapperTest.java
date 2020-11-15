@@ -2,6 +2,10 @@ package com.sunflower.service.mapper;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.sunflower.mapper.ReceiptMapper;
+import com.sunflower.mapper.ReceiptMapperImpl;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ReceiptMapperTest {

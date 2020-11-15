@@ -8,10 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sunflower.domain.OnlineClassDBEntity;
 import com.sunflower.domain.enumeration.Status;
+import com.sunflower.mapper.OnlineClassMapper;
 import com.sunflower.repository.OnlineClassRepository;
 import com.sunflower.service.OnlineClassService;
 import com.sunflower.service.dto.OnlineClassDTO;
-import com.sunflower.service.mapper.OnlineClassMapper;
 
 /**
  * Service Implementation for managing {@link OnlineClassDBEntity}.

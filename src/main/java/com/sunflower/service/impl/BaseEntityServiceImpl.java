@@ -8,11 +8,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sunflower.mapper.EntityMapper;
 import com.sunflower.repository.BaseEntityRepository;
 import com.sunflower.repository.projections.lookup.EntityLookup;
 import com.sunflower.service.EntityService;
 import com.sunflower.service.dto.BaseEntityDTO;
-import com.sunflower.service.mapper.EntityMapper;
 
 public abstract class BaseEntityServiceImpl<D extends BaseEntityDTO, E> implements EntityService<D, E> {
 

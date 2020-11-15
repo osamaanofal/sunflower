@@ -2,10 +2,10 @@ package com.sunflower.web.rest;
 
 import com.sunflower.SunflowerApp;
 import com.sunflower.domain.TeacherDBEntity;
+import com.sunflower.mapper.TeacherMapper;
 import com.sunflower.repository.TeacherRepository;
 import com.sunflower.service.TeacherService;
 import com.sunflower.service.dto.TeacherDTO;
-import com.sunflower.service.mapper.TeacherMapper;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

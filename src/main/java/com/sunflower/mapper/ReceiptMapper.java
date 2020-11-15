@@ -1,4 +1,4 @@
-package com.sunflower.service.mapper;
+package com.sunflower.mapper;
 
 
 import com.sunflower.domain.*;

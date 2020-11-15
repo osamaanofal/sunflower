@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sunflower.domain.ReceiptDBEntity;
+import com.sunflower.mapper.ReceiptMapper;
 import com.sunflower.repository.ReceiptRepository;
 import com.sunflower.service.ReceiptService;
 import com.sunflower.service.dto.ReceiptDTO;
-import com.sunflower.service.mapper.ReceiptMapper;
 
 /**
  * Service Implementation for managing {@link ReceiptDBEntity}.

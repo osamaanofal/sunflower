@@ -2,9 +2,10 @@ package com.sunflower.service.impl;
 
 import com.sunflower.service.CourseService;
 import com.sunflower.domain.CourseDBEntity;
+import com.sunflower.mapper.CourseMapper;
 import com.sunflower.repository.CourseRepository;
 import com.sunflower.service.dto.CourseDTO;
-import com.sunflower.service.mapper.CourseMapper;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

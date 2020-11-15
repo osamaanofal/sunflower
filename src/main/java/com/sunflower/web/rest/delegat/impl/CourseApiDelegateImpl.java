@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sunflower.domain.OnlineClassDBEntity;
+import com.sunflower.mapper.OnlineClassMapper;
 import com.sunflower.service.CourseService;
 import com.sunflower.service.OnlineClassService;
-import com.sunflower.service.mapper.OnlineClassMapper;
 import com.sunflower.web.rest.CoursesApiDelegate;
 import com.sunflower.web.rest.model.AvailableCourse;
 
