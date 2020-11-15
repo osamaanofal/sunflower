@@ -2,3 +2,5 @@ version: '2'
 services:
   sunflower-app:
     image: sunflower
+    ports:
+      - '8081:8081'
