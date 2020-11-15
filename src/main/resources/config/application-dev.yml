@@ -53,7 +53,9 @@ spring:
       auto-commit: false
   h2:
     console:
-      enabled: false
+      enabled: true
+      settings:
+        web-allow-others: true
   jpa:
     database-platform: io.github.jhipster.domain.util.FixedH2Dialect
     show-sql: true
